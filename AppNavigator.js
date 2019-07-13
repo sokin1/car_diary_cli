@@ -1,4 +1,40 @@
+import React, { Component } from 'react'
+import { Text, View } from 'react-native';
+import Calendar from './Components/Calendar'
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
+
+class HomeScreen extends Component {
+    render() {
+      return (
+        // <LinearGradient colors={['#2b5876', '#4e4376']} style={styles.linearGradient}>
+        // </LinearGradient>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text>Home!</Text>
+        </View>
+      )
+    }
+  }
+  
+  class SummaryScreen extends Component {
+    render() {
+      return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text>Summary!</Text>
+        </View>
+      )
+    }
+  }
+  
+  class SettingsScreen extends Component {
+    render() {
+      return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text>Settings!</Text>
+        </View>
+      )
+    }
+  }
 
 const getTabBarIcon = (navigation, focused, tintColor) => {
     const { routeName } = navigation.state
@@ -26,7 +62,7 @@ const RootNavigator = createBottomTabNavigator(
     },
     {
       defaultNavigationOptions: ({ navigation }) => ({
-        tabBarIcon: ({ focused, tintColor }) =>
+        tabBarIcon: ({ focused, tintColor }) => 
           getTabBarIcon(navigation, focused, tintColor)
       }),
       tabBarOptions: {
